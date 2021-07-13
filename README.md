@@ -1,4 +1,4 @@
-# Load1TBDataToSQLServer
+# Load1 Terabytes of data To SQLServer
 Using SSIS to load 1TB data into SQL Server, with simplified settings
 
 
