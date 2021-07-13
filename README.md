@@ -13,7 +13,7 @@ Using SSIS to load 1TB data into SQL Server, with simplified settings
 * A heap is a table without a clustered index. One or more nonclustered indexes can be created on tables stored as a heap. Data is stored in the heap without specifying an order. Usually data is initially stored in the order in which is the rows are inserted into the table, but the Database Engine can move data around in the heap to store the rows efficiently; so the data order cannot be predicted. To guarantee the order of rows returned from a heap, you must use the ORDER BY clause. To specify a permanent logical order for storing the rows, create a clustered index on the table, so that the table is not a heap.
 
 #####  Partition Function:
-  Partition function maps the rows of a table or index into partitions based on the values of a specified column.
+* Partition function maps the rows of a table or index into partitions based on the values of a specified column.
   
 ### References
 * https://techcommunity.microsoft.com/t5/sql-server-integration-services/using-ssis-to-load-1tb-data-into-sql-server-in-30-mins-with/ba-p/388322
