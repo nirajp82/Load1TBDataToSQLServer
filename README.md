@@ -16,7 +16,18 @@ A heap is a table without a clustered index. One or more nonclustered indexes ca
 
 #####  **Partition Function**
 Partition function maps the rows of a table or index into partitions based on the values of a specified column. Using CREATE PARTITION FUNCTION is the first step in creating a partitioned table or index. In SQL Server, a table or index can have a maximum of 15,000 partitions.
-A. Creating a RANGE LEFT partition function on an int column
+** Creating a RANGE LEFT partition function on an int column
+The following partition function will partition a table or index into four partitions.
+```
+CREATE PARTITION FUNCTION myRangePF1 (int)  
+AS RANGE LEFT FOR VALUES (1, 100, 1000);
+```
+
+** Partition: 1 = col1 <= 1
+** Partition: 2 = col1 > 1 AND col1 <= 100 	
+** Partition: 3 = col1 > 100 AND col1 <=1000	
+** Partition: 4 = col1 > 1000
+
 
   
 ### References
