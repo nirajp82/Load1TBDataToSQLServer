@@ -1,4 +1,4 @@
-# Load1 Terabytes of data To SQLServer
+# Load Terabytes of data To SQLServer
 Using SSIS to load 1TB data into SQL Server, with simplified settings
 
 ##### What is a Filegroup?
