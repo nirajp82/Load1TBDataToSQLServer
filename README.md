@@ -9,9 +9,12 @@ Using SSIS to load 1TB data into SQL Server, with simplified settings
  * How view file group
    ```SELECT * FROM sys.filegroups```
 
+##### Heaps
+* A heap is a table without a clustered index. One or more nonclustered indexes can be created on tables stored as a heap. Data is stored in the heap without specifying an order. Usually data is initially stored in the order in which is the rows are inserted into the table, but the Database Engine can move data around in the heap to store the rows efficiently; so the data order cannot be predicted. To guarantee the order of rows returned from a heap, you must use the ORDER BY clause. To specify a permanent logical order for storing the rows, create a clustered index on the table, so that the table is not a heap.
 
 ### References
 * https://techcommunity.microsoft.com/t5/sql-server-integration-services/using-ssis-to-load-1tb-data-into-sql-server-in-30-mins-with/ba-p/388322
 * https://www.patrickkeisler.com/2013/01/how-to-remove-undo-table-partitioning.html
 * https://www.emaildoctor.org/blog/what-are-files-and-filegroups-in-sql-server/
 * https://blogs.lessthandot.com/index.php/datamgmt/dbadmin/sql-server-filegroups-the-what/
+* https://docs.microsoft.com/en-us/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?view=sql-server-ver15
