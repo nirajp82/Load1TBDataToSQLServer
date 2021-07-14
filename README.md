@@ -22,11 +22,9 @@ The following partition function will partition a table or index into four parti
 CREATE PARTITION FUNCTION myRangePF1 (int)  
 AS RANGE LEFT FOR VALUES (1, 100, 1000);
 ```
-
-** Partition: 1 = col1 <= 1
-** Partition: 2 = col1 > 1 AND col1 <= 100 	
-** Partition: 3 = col1 > 100 AND col1 <=1000	
-** Partition: 4 = col1 > 1000
+| Partition 1    | Partition 2     | Partition 3      | Partition: 4     |
+| -------------- |:--------------: | ---------------: |------------------ |
+| col1 <= 1      |  col1 > 1 AND col1 <= 100 |col1 > 100 AND col1 <=1000	 | col1 > 1000 |
 
 
   
