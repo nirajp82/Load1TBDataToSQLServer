@@ -35,6 +35,11 @@ AS RANGE LEFT FOR VALUES (1, 100, 1000);
 #### **PARTITION SCHEME** 
 Partition Scheme maps the partitions of a partitioned table or index to filegroups. The number and domain of the partitions of a partitioned table or index are determined in a partition function. A partition function must first be created in a CREATE PARTITION FUNCTION statement before creating a partition scheme.
 
+```
+CREATE PARTITION SCHEME myRangePS1  
+AS PARTITION myRangePF1  
+TO (test1fg, test2fg, test3fg, test4fg);  
+```
   
 ### References
 * https://techcommunity.microsoft.com/t5/sql-server-integration-services/using-ssis-to-load-1tb-data-into-sql-server-in-30-mins-with/ba-p/388322
