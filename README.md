@@ -7,6 +7,28 @@ Using SSIS to load 1TB data into SQL Server, with simplified settings
 * Create a Partition Function with Ranges
 * Create a Partition Schema with File Groups
 
+## **Steps to create Table Partitioning in SQL Server**
+1. Create a File Group
+1. Add Files to File Group
+1. Create a Partition Function with Ranges
+1. Create a Partition Schema with File Groups
+
+## **Steps to Undo Table Partitioning in SQL Server**
+*  **When database table has has partitioned clustered index**
+> * CREATE New NDEX using the DROP_EXISTING option and specifying a different filegroup (PRIMARY). 
+
+*  **When database table has has partitioned non clustered index**
+> * CREATE New NDEX using the DROP_EXISTING option and specifying a different filegroup (PRIMARY). 
+> * combine all of the four partitions into a single partition.  
+Hint: The MERGE RANGE command removes the boundary point between the specified partitions.
+> * Specify the PRIMARY filegroup as the next partition using `ALTER PARTITION SCHEME NEXT USED`
+> * Use ALTER PARTITION FUNCTION SPLIT RANGE using a partition value that is larger than the maximum value of partition column.  
+		The SPLIT RANGE command will create a new boundary in the partitioned table.
+> * Create a non-partitioned table in the PRIMARY filegroup that matches the PartitionTable2 in every way, including any data types, constraints, etc.  
+		  This new table will only be used as a temporary holding location for the data.
+> * Move all the rows into the NonPartitionTable using ALTER TABLE SWITCH
+> * Drop the partitioned table and rename  temporary table to the original name.
+
 ##### **What is a Filegroup?**
 A filegroup is a logical structure to group objects in a database. Don’t confuse filegroups with actual files (.mdf, .ddf, .ndf, .ldf, etc.). You can have multiple filegroups per database. One filegroup will be the primary, and all system tables are stored on it. Then, you add additional filegroups. You can specify one filegroup as the default, and objects not specifically assigned to a filegroup will exist in the default. In a filegroup, you can have multiple files.
 
