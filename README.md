@@ -1,6 +1,12 @@
 # Load Terabytes of data To SQLServer
 Using SSIS to load 1TB data into SQL Server, with simplified settings
 
+### Table Partitioning in SQL Server – Step by Step
+* Create a File Group
+* Add Files to File Group
+* Create a Partition Function with Ranges
+* Create a Partition Schema with File Groups
+
 ##### **What is a Filegroup?**
 A filegroup is a logical structure to group objects in a database. Don’t confuse filegroups with actual files (.mdf, .ddf, .ndf, .ldf, etc.). You can have multiple filegroups per database. One filegroup will be the primary, and all system tables are stored on it. Then, you add additional filegroups. You can specify one filegroup as the default, and objects not specifically assigned to a filegroup will exist in the default. In a filegroup, you can have multiple files.
 
@@ -35,3 +41,4 @@ AS RANGE LEFT FOR VALUES (1, 100, 1000);
 * https://blogs.lessthandot.com/index.php/datamgmt/dbadmin/sql-server-filegroups-the-what/
 * https://docs.microsoft.com/en-us/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?view=sql-server-ver15
 * https://docs.microsoft.com/en-us/sql/t-sql/statements/create-partition-function-transact-sql?view=sql-server-ver15
+* https://www.sqlshack.com/how-to-automate-table-partitioning-in-sql-server/
