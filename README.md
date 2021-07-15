@@ -48,4 +48,5 @@ TO (test1fg, test2fg, test3fg, test4fg);
 * https://blogs.lessthandot.com/index.php/datamgmt/dbadmin/sql-server-filegroups-the-what/
 * https://docs.microsoft.com/en-us/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?view=sql-server-ver15
 * https://docs.microsoft.com/en-us/sql/t-sql/statements/create-partition-function-transact-sql?view=sql-server-ver15
+* https://docs.microsoft.com/en-us/sql/t-sql/statements/create-partition-scheme-transact-sql?view=sql-server-ver15
 * https://www.sqlshack.com/how-to-automate-table-partitioning-in-sql-server/
