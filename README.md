@@ -40,6 +40,14 @@ CREATE PARTITION SCHEME myRangePS1
 AS PARTITION myRangePF1  
 TO (test1fg, test2fg, test3fg, test4fg);  
 ```
+
+| Filegroup    | Partition     | Values      |
+| -------------|:--------------: | :-------: |
+| test1fg      |  1            | col1 <= 1	|
+| test1fg      |  2            | col1 > 1 AND col1 <= 100	|
+| test1fg      |  3           | col1 > 100 AND col1 <=1000	|
+| test1fg      |  4            | col1 > 1000	|
+
   
 ### References
 * https://techcommunity.microsoft.com/t5/sql-server-integration-services/using-ssis-to-load-1tb-data-into-sql-server-in-30-mins-with/ba-p/388322
