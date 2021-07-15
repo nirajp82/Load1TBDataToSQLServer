@@ -7,12 +7,6 @@ Using SSIS to load 1TB data into SQL Server, with simplified settings
 * Create a Partition Function with Ranges
 * Create a Partition Schema with File Groups
 
-## **Steps to create Table Partitioning in SQL Server**
-1. Create a File Group
-1. Add Files to File Group
-1. Create a Partition Function with Ranges
-1. Create a Partition Schema with File Groups
-
 ## **Steps to Undo Table Partitioning in SQL Server**
 *  **When database table has has partitioned clustered index**
 > * CREATE New NDEX using the DROP_EXISTING option and specifying a different filegroup (PRIMARY). 
