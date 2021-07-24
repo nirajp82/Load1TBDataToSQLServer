@@ -32,3 +32,34 @@ void ReadLargeFileUsingIEnumerable(string fileName, string newFileName)
     }
   }
 }
+
+//Array Of Dictionary
+
+private static long Add(int capacity, string key)
+ {
+      //var value = Interlocked.Increment(ref _uniqueId);
+      _uniqueId += 1;
+      var keyIdMapper = FindDict(capacity, _uniqueId);
+      keyIdMapper.Add(key, _uniqueId);
+      return _uniqueId;
+ }
+
+private static long GetId( string key)
+{            
+   foreach (var dict in _keyIdMapperList)
+   {
+      if (dict.ContainsKey(key))
+         return dict[key];
+   }
+
+    return default;
+}
+
+private static IDictionary<string, long> FindDict(int capacity, long _uniqueId) 
+{
+    var currentDictIndex = _uniqueId / capacity;
+    if (_keyIdMapperList[currentDictIndex] == null) 
+        _keyIdMapperList[currentDictIndex] = new Dictionary<string, long>(capacity);
+
+    return _keyIdMapperList[currentDictIndex];
+}
