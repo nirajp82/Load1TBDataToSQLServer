@@ -34,6 +34,9 @@ void ReadLargeFileUsingIEnumerable(string fileName, string newFileName)
 }
 
 //Array Of Dictionary
+const int _DictionaryCapacity = 5000000;
+static long _uniqueId = 0;
+static IDictionary<string, long>[] _keyIdMapperList = new IDictionary<string, long>[200];
 
 private static long Add(int capacity, string key)
  {
