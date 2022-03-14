@@ -23,9 +23,9 @@ async Task ReadLargeFileUsingStream(string fileName,string newFileName)
 //Following code reads 16 GB file and creates new in around 6 minutes.
 void ReadLargeFileUsingIEnumerable(string fileName, string newFileName)
 {
+  IEnumerable<string> lines = File.ReadLines(fileName);
   using (var writer = new StreamWriter(newFileName))
-  {
-    IEnumerable<string> lines = File.ReadLines(fileName);
+  {   
     foreach (var line in lines)                
     {
       writer.WriteLine($"{line},{newVal}");
